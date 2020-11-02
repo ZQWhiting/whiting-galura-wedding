@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { Link } from 'react-router-dom';
-import { ADD_USER } from '../utils/mutations';
+import { Link, Redirect } from 'react-router-dom';
+import { SIGNUP } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 function Signup() {
 	const [formState, setFormState] = useState({ name: '', password: '' });
-	const [signup, { error }] = useMutation(ADD_USER);
+	const [signup, { error }] = useMutation(SIGNUP);
 
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
@@ -31,6 +31,10 @@ function Signup() {
 			[name]: value,
 		});
 	};
+
+	if (Auth.loggedIn()) {
+		return <Redirect to='/welcome' />;
+	}
 
 	return (
 		<div className='container-sm my-3 mx-auto'>
@@ -73,7 +77,7 @@ function Signup() {
 					</button>
 				</div>
 			</form>
-			<Link to='/signup'>← Go to Signup</Link>
+			<Link to='/'>← Go to Login</Link>
 		</div>
 	);
 }

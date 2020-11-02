@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
@@ -31,6 +31,10 @@ function Login() {
 			[name]: value,
 		});
 	};
+
+	if (Auth.loggedIn()) {
+		return <Redirect to='/welcome' />;
+	}
 
 	return (
 		<div className='container-sm my-3 mx-auto'>
