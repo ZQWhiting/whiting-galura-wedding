@@ -4,22 +4,21 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
 const contactSchema = new Schema({
-  email: {
-    type: String,
-    unique: true,
+	email: {
+		type: String,
     match: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
     default: null
-  },
-  address: {
-    type: String,
-    default: null
-  },
-  phoneNumber: {
-    type: String,
-    match: /@"^\d{10}$"/,
-    default: null
-  },
-})
+	},
+	address: {
+		type: String,
+		default: null,
+	},
+	phoneNumber: {
+		type: String,
+		match: /@"^\d{10}$"/,
+		default: null,
+	},
+});
 
 const detailSchema = new Schema({
   photo: {
@@ -52,20 +51,20 @@ const activitiesSchema = new Schema({
 })
 
 const userSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 5
-  },
-  contact: contactSchema,
-  details: detailSchema,
-  activities: activitiesSchema
+	name: {
+		type: String,
+		required: true,
+		unique: true,
+		trim: true,
+	},
+	password: {
+		type: String,
+		required: true,
+		minlength: 5,
+	},
+	contact: contactSchema,
+	details: detailSchema,
+	activities: activitiesSchema,
 });
 
 // set up pre-save middleware to create password
