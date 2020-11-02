@@ -15,7 +15,7 @@ const Header = () => {
 			<Nav className='flex-row ml-auto'>
 				{!Auth.loggedIn() ? (
 					<>
-						<LinkContainer to='/login'>
+						<LinkContainer to='/'>
 							<Nav.Item className='text-light mx-2' role='button'>
 								Login
 							</Nav.Item>

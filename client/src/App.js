@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import Welcome from './pages/welcome';
+import Welcome from './pages/Welcome';
 import NoMatch from './pages/NoMatch';
 import Header from './components/Header';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const client = new ApolloClient({
 	request: (operation) => {
@@ -26,9 +28,9 @@ function App() {
 				<div>
 					<Header />
 					<Switch>
-						<Route exact path='/' component={Welcome} />
-						{/* <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} /> */}
+						<Route exact path='/' component={Login} />
+						<Route exact path='/welcome' component={Welcome} />
+						<Route exact path='/signup' component={Signup} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>
