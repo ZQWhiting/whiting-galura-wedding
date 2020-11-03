@@ -8,6 +8,11 @@ import NoMatch from './pages/NoMatch';
 import Header from './components/Header';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import GuestBook from './pages/GuestBook';
+import OurStory from './pages/OurStory';
+import Registry from './pages/Registry';
+import YourStories from './pages/YourStories';
+import Ceremony from './pages/Ceremony';
 
 const client = new ApolloClient({
 	request: (operation) => {
@@ -31,6 +36,15 @@ function App() {
 						<Route exact path='/' component={Login} />
 						<Route exact path='/welcome' component={Welcome} />
 						<Route exact path='/signup' component={Signup} />
+						<Route exact path='/ourstory' component={OurStory} />
+						<Route exact path='/registry' component={Registry} />
+						<Route
+							exact
+							path='/yourstories'
+							component={YourStories}
+						/>
+						<Route exact path='/guestbook' component={GuestBook} />
+						<Route exact path='/ceremony' component={Ceremony} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>
