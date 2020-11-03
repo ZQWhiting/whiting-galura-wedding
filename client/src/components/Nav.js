@@ -11,6 +11,7 @@ function Nav() {
 				</>
 			) : (
 				<>
+					<Link to='/ceremony'>Ceremony</Link>
 					<Link to='/ourstory'>Our Story</Link>
 					<Link to='/yourstories'>Your Stories</Link>
 					<Link to='/guestbook'>Guest Book</Link>
