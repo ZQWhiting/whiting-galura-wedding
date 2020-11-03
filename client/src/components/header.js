@@ -5,9 +5,11 @@ import Nav from './Nav';
 const Header = () => {
 	return (
 		<>
-			<Link to='/' className='' role='button'>
-				<h1>Ashley + Zachary</h1>
-			</Link>
+			<h1>
+				<Link to='/' className='' role='button'>
+					Ashley + Zachary
+				</Link>
+			</h1>
 			<Nav />
 		</>
 	);
