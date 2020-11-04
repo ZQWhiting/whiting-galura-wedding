@@ -33,8 +33,8 @@ function App() {
 				<div className='container'>
 					<Header />
 					<Switch>
-						<Route exact path='/' component={Login} />
-						<Route exact path='/welcome' component={Welcome} />
+						<Route exact path='/' component={Welcome} />
+						<Route exact path='/login' component={Login} />
 						<Route exact path='/signup' component={Signup} />
 						<Route exact path='/ourstory' component={OurStory} />
 						<Route exact path='/registry' component={Registry} />

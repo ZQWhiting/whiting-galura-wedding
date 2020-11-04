@@ -33,7 +33,7 @@ function Signup() {
 	};
 
 	if (Auth.loggedIn()) {
-		return <Redirect to='/welcome' />;
+		return <Redirect to='/' />;
 	}
 
 	return (
@@ -77,7 +77,7 @@ function Signup() {
 					</button>
 				</div>
 			</form>
-			<Link to='/'>← Go to Login</Link>
+			<Link to='/login'>← Go to Login</Link>
 		</div>
 	);
 }

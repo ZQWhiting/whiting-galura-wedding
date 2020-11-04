@@ -41,6 +41,7 @@ body {
   background-position: 30%;
 
   min-height: 100vh;
+  font-size: 125%;
 }
 
 a {
@@ -50,9 +51,23 @@ a {
 
 .name-padding {
   padding-top: 30vh;
-  padding-bottom: 10vh
+  padding-bottom: 5vh;
 }
 
 .align-center {
   align-items: center;
+}
+
+
+.welcome-image img {
+  width: 30vw;
+  padding: 10px;
+  border-radius: 46% 46% 0% 0%
+
+}
+
+@media only screen and (max-width: 600px) {
+  .welcome-image img {
+    width: 75vw;
+  }
 }

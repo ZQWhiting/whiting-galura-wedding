@@ -33,7 +33,7 @@ function Login() {
 	};
 
 	if (Auth.loggedIn()) {
-		return <Redirect to='/welcome' />;
+		return <Redirect to='/' />;
 	}
 
 	return (

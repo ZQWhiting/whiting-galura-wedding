@@ -1,6 +1,13 @@
+import Zachary from '../assets/images/Zachary.jpg';
+import Ashley from '../assets/images/Ashley.jpg';
+
 function Welcome() {
 	return (
 		<div>
+			<div className='welcome-image d-flex pb-3 flex-wrap'>
+				<img src={Ashley} className='mx-auto' />
+				<img src={Zachary} className='mx-auto' />
+			</div>
 			<div>
 				<h2>Warm Welcome</h2>
 				<p>
