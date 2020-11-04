@@ -30,7 +30,7 @@ function App() {
 	return (
 		<ApolloProvider client={client}>
 			<Router>
-				<div>
+				<div className='container'>
 					<Header />
 					<Switch>
 						<Route exact path='/' component={Login} />
