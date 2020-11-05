@@ -18,7 +18,7 @@ function Registry() {
 				</a>
 			</div>
 			<h5 className='text-footer'>
-				We greatly appreciate any donations.
+				We greatly appreciate any and all donations.
 			</h5>
 		</>
 	);

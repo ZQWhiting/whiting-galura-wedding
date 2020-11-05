@@ -6,8 +6,8 @@ const bcrypt = require('bcrypt');
 const contactSchema = new Schema({
 	email: {
 		type: String,
-    match: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-    default: null
+		match: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+		default: null,
 	},
 	address: {
 		type: String,
@@ -16,6 +16,10 @@ const contactSchema = new Schema({
 	phoneNumber: {
 		type: String,
 		match: /@"^\d{10}$"/,
+		default: null,
+	},
+	website: {
+		type: String,
 		default: null,
 	},
 });

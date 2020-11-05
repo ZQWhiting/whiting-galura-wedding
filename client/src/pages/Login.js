@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-function Login() {
+function Login({ previousPath='/' }) {
 	const [formState, setFormState] = useState({ name: '', password: '' });
 	const [login, { error }] = useMutation(LOGIN);
 
@@ -18,7 +18,7 @@ function Login() {
 				},
 			});
 			const token = mutationResponse.data.login.token;
-			Auth.login(token);
+			Auth.login(token, previousPath);
 		} catch (e) {
 			console.log(e);
 		}
@@ -33,7 +33,7 @@ function Login() {
 	};
 
 	if (Auth.loggedIn()) {
-		return <Redirect to='/' />;
+		return <Redirect to={previousPath} />;
 	}
 
 	return (
@@ -77,7 +77,11 @@ function Login() {
 					</button>
 				</div>
 			</form>
-			<Link to='/signup'>← Go to Signup</Link>
+			<Link to='/signup' previousPath={previousPath}>
+
+				← Go to Signup
+
+			</Link>
 		</div>
 	);
 }
