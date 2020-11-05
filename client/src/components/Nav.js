@@ -1,24 +1,53 @@
 import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
+import { dims } from '../utils/helpers';
 
-function Nav() {
+function Nav({showDropdown, setShowDropdown}) {
+	const { width } = dims();
+	const dropdown = () => {
+		if (width < 768) {
+			setShowDropdown(!showDropdown)
+		}
+	}
+	const dropdownLogout = () => {
+		if (width < 768) {
+			setShowDropdown(!showDropdown)
+		}
+		Auth.logout()
+	}
 	return (
 		<nav className='row text-center mt-5 font-eng-i h3 align-center'>
 			<>
-				<Link to='/ourstory' className='col p-3'>
+				<Link to='/ourstory' className='col p-3' onClick={dropdown}>
 					Our Story
 				</Link>
-				<Link to='/yourstories' className='col p-3'>
+				<Link to='/yourstories' className='col p-3' onClick={dropdown}>
 					Your Stories
 				</Link>
-				<Link to='/ceremony' className='col p-3'>
+				<Link to='/ceremony' className='col p-3' onClick={dropdown}>
 					Ceremony
 				</Link>
-				<Link to='/guestbook' className='col p-3'>
+				<Link to='/guestbook' className='col p-3' onClick={dropdown}>
 					Guest Book
 				</Link>
-				<Link to='/registry' className='col p-3'>
+				<Link to='/registry' className='col p-3' onClick={dropdown}>
 					Registry
 				</Link>
+				{width < 768 &&
+					(Auth.loggedIn() ? (
+						<Link to='/' className='col p-3' onClick={dropdownLogout}>
+							Logout
+						</Link>
+					) : (
+						<>
+							<Link to='/login' className='col p-3' onClick={dropdown}>
+								Login
+							</Link>{' '}
+							<Link to='/signup' className='col p-3' onClick={dropdown}>
+								Sign Up
+							</Link>
+						</>
+					))}
 			</>
 		</nav>
 	);

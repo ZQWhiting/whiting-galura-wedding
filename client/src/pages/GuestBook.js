@@ -32,7 +32,7 @@ function GuestBook() {
 								placeholder='Your Message'
 							/>
 						</div>
-						<button type='submit' className='btn mb-2 submit-btn'>
+						<button type='submit' className='btn button mb-2 submit-btn'>
 							Submit
 						</button>
 					</form>
@@ -78,7 +78,7 @@ function GuestBook() {
 								placeholder='Website'
 							></input>
 						</div>
-						<button type='submit' className='btn mb-2 submit-btn'>
+						<button type='submit' className='btn button mb-2 submit-btn'>
 							Submit
 						</button>
 					</form>

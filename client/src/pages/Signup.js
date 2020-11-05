@@ -72,7 +72,7 @@ function Signup({ previousPath = '/' }) {
 					</div>
 				) : null}
 				<div>
-					<button type='submit' className='btn btn-primary mb-2'>
+					<button type='submit' className='btn button mb-2'>
 						Submit
 					</button>
 				</div>
