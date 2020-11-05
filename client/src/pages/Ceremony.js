@@ -2,10 +2,24 @@ function Ceremony() {
 	return (
 		<div>
 			<div>
-				<h2>Link to the Zoom Ceremony</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
+				<h2>Ceremony</h2>
+				<p>
+					As ordained by and by the power of God, <br />
+					Ashley Grace Galura and Zachary Quinn Whiting <br />
+					will be sealed for all time and eternity
+					in <br />
+					the Oquirrh Mountain Temple on <br />
+					November 24th, 2020.
+				</p>
+				<p>
+					Following the sealing, at 6pm, a ring ceremony will be
+					zoom broadcasted.
+					<br />
+					The ceremony will be recorded and uploaded here at a later time.
+				</p>
+				<p>The link to the zoom broadcast will be posted here.</p>
 			</div>
-			<article>
+			{/* <article>
 				<h2>The Covenant of Marriage: Our Testimonies</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -33,7 +47,7 @@ function Ceremony() {
 					faucibus varius. Nunc feugiat nunc id mi pellentesque
 					tincidunt. In dictum sem a lectus molestie consequat.
 				</p>
-			</article>
+			</article> */}
 		</div>
 	);
 }
