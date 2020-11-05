@@ -1,3 +1,8 @@
+html {
+  font-size: 20px;
+  text-shadow: 1px 1px white;
+}
+
 @font-face {
   font-family: "Jane Austen";
   src: url(./assets/fonts/JaneAust.ttf);
@@ -41,7 +46,10 @@ body {
   background-position: 30%;
 
   min-height: 100vh;
-  font-size: 125%;
+}
+
+code {
+  font-size: 500%;
 }
 
 a {
@@ -50,7 +58,6 @@ a {
 }
 
 .name-padding {
-  padding-top: 30vh;
   padding-bottom: 5vh;
 }
 
@@ -66,8 +73,17 @@ a {
 
 }
 
+.container {
+  background-color: rgba(255,255,255,0.3);
+  padding: 20vh 0 3em;
+}
+
 @media only screen and (max-width: 600px) {
+  html {
+    font-size: 17px;
+  }
   .welcome-image img {
     width: 75vw;
+    border-radius: 0;
   }
 }

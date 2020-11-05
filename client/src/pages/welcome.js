@@ -5,8 +5,12 @@ function Welcome() {
 	return (
 		<div>
 			<div className='welcome-image d-flex pb-3 flex-wrap'>
-				<img src={Ashley} className='mx-auto' />
-				<img src={Zachary} className='mx-auto' />
+				<img src={Ashley} className='mx-auto' alt='Ashley, the bride' />
+				<img
+					src={Zachary}
+					className='mx-auto'
+					alt='Zachary, the groom'
+				/>
 			</div>
 			<div>
 				<h2>Warm Welcome</h2>

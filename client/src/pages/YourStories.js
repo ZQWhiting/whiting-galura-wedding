@@ -1,32 +1,31 @@
 import { Link } from 'react-router-dom';
 
-function YourStories () {
-    return (
+function YourStories() {
+	return (
 		<>
-			<div>
-				<h2>
-					<Link to='/stories'>Stories of the couple</Link>
-				</h2>
+			<div className='text-center'>
+				<h2>Your Stories</h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Vestibulum rhoncus blandit ipsum vel rutrum. Integer
-					ullamcorper erat non nisi convallis, ac accumsan ante
-					malesuada. Sed porta hendrerit scelerisque.
+					Hello and welcome to the Your Stories page, a place for our
+					guests to share their favorite experiences relating to the
+					couple or their parents with one another. A bit of self introduction is
+					encouraged (though not necessary), as are positive,
+					light-filled messages.
 				</p>
-			</div>
-			<div>
-				<h2>
-					<Link to='/createstory'>Tell a story</Link>
-				</h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Vestibulum rhoncus blandit ipsum vel rutrum. Integer
-					ullamcorper erat non nisi convallis, ac accumsan ante
-					malesuada. Sed porta hendrerit scelerisque.
+					The stories posted on this page will be saved by the couple,
+					so we would appreciate it if you took the time to share
+					something. Also, all submissions posted here will be seen publicly, so personal messages to the couple should be posted in the Guest Book.
 				</p>
+				{/* <Link to='yourstories/createstory' className='font-eng-i h4'>
+					Tell a story
+				</Link> */}
+				<h5>
+					Your Stories is currently a work in progress and will be released as the date of the wedding is closer. Until then, please prepare your stories to share!
+				</h5>
 			</div>
 		</>
 	);
 }
 
-export default YourStories
+export default YourStories;
