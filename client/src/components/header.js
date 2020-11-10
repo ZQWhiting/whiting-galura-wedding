@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import Nav from './Nav';
+import Nav from './nav';
 
 import { dims } from '../utils/helpers';
 import Auth from '../utils/auth';

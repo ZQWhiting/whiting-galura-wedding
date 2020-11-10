@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import Welcome from './pages/Welcome copy';
-import NoMatch from './pages/NoMatch';
-import Header from './components/Header';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import GuestBook from './pages/GuestBook';
-import OurStory from './pages/OurStory';
-import Registry from './pages/Registry';
-import YourStories from './pages/YourStories';
-import Ceremony from './pages/Ceremony';
-import CreateStory from './pages/CreateStory';
+import Welcome from './pages/welcome';
+import NoMatch from './pages/nomatch';
+import Header from './components/header';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import GuestBook from './pages/guestbook';
+import OurStory from './pages/ourstory';
+import Registry from './pages/registry';
+import YourStories from './pages/yourstories';
+import Ceremony from './pages/ceremony';
+import CreateStory from './pages/createstory';
 
 const client = new ApolloClient({
 	request: (operation) => {
