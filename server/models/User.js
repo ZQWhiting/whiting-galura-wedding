@@ -15,7 +15,7 @@ const contactSchema = new Schema({
 	},
 	phoneNumber: {
 		type: String,
-		match: /@"^\d{10}$"/,
+		match: /^\d{3}-\d{3}-\d{4}$/,
 		default: null,
 	},
 	website: {
@@ -65,6 +65,9 @@ const userSchema = new Schema({
 		type: String,
 		required: true,
 		minlength: 5,
+	},
+	guestBook: {
+		type: String,
 	},
 	contact: contactSchema,
 	details: detailSchema,

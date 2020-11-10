@@ -21,3 +21,26 @@ export const SIGNUP = gql`
 		}
 	}
 `;
+
+export const ADD_CONTACT = gql`
+	mutation addContact($contact: ContactInput) {
+		addContact(contact: $contact) {
+			name
+			contact {
+				email
+				address
+				phoneNumber
+				website
+			}
+		}
+	}
+`;
+
+export const SIGN_GUEST_BOOK = gql`
+	mutation signGuestBook($signature: String!) {
+		signGuestBook(signature: $signature) {
+			name
+			guestBook
+		}
+	}
+`;

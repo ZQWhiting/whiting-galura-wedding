@@ -1,9 +1,11 @@
 // send a message to the couple
 // attach your contact
 
+import { useMutation } from '@apollo/react-hooks';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
+import { SIGN_GUEST_BOOK, ADD_CONTACT } from '../utils/mutations';
 
 function GuestBook() {
 	const [guestContent, setGuestContent] = useState('');
@@ -13,12 +15,63 @@ function GuestBook() {
 		phoneNumber: '',
 		website: '',
 	});
+	const [validationError, setValidationError] = useState('')
+
+	const [signGuestBook] = useMutation(SIGN_GUEST_BOOK, {
+		variables: { signature: guestContent },
+	});
+	const [addContacts] = useMutation(ADD_CONTACT, {
+		variables: { contact: contactContent },
+	});
 
 	function submitGuestBook(e) {
 		e.preventDefault();
+
+		signGuestBook();
+
+		setGuestContent('');
 	}
+	const validateEmail = () =>
+		!contactContent.email
+			? true
+			: contactContent.email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
+			? true
+			: false;
+
+	const validatePhoneNumber = () =>
+		!contactContent.phoneNumber
+			? true
+			: contactContent.phoneNumber.match(/^\d{3}-\d{3}-\d{4}$/)
+			? true
+			: false;
+
 	function submitContact(e) {
 		e.preventDefault();
+
+		const email = validateEmail();
+		const phoneNumber = validatePhoneNumber();
+
+		if (email && phoneNumber) {
+			try {
+				console.log()
+				addContacts();
+				setContactContent({
+					email: '',
+					address: '',
+					phoneNumber: '',
+					website: '',
+				});
+				setValidationError('')
+			} catch (e) {
+				console.log(e);
+			}
+		} else if (!email && !phoneNumber) {
+			setValidationError('Email and Phone Number validation failed.');
+		} else if (!phoneNumber) {
+			setValidationError('Phone Number validation failed. Please use format: ###-###-####')
+		} else {
+			setValidationError('Email validation failed.')
+		}
 	}
 	return (
 		<div className='guest-book'>
@@ -103,7 +156,7 @@ function GuestBook() {
 								type='text'
 								name='phone-number'
 								className='form-control col mx-3'
-								placeholder='Phone Number'
+								placeholder='Phone Number: ###-###-####'
 								value={contactContent.phoneNumber}
 								onChange={(e) =>
 									setContactContent({
@@ -136,6 +189,7 @@ function GuestBook() {
 						>
 							Submit
 						</button>
+						{validationError && (<div>{validationError}</div>)}
 					</form>
 				)}
 			</div>
