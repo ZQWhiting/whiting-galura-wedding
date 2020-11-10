@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { SIGNUP } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-function Signup({ previousPath = '/' }) {
+function Signup() {
 	const [formState, setFormState] = useState({ name: '', password: '' });
 	const [signup, { error }] = useMutation(SIGNUP);
 
@@ -33,12 +33,12 @@ function Signup({ previousPath = '/' }) {
 	};
 
 	if (Auth.loggedIn()) {
-		return <Redirect to={previousPath} />;
+		return <Redirect to='/' />;
 	}
 
 	return (
 		<div className='container-sm my-3 mx-auto'>
-			<h2>Signup</h2>
+			<h2>Sign Up</h2>
 			<form onSubmit={handleFormSubmit}>
 				<div className='my-2 form-group mb-2 row'>
 					<label htmlFor='name' className='col-12 col-md-2'>
@@ -77,8 +77,8 @@ function Signup({ previousPath = '/' }) {
 					</button>
 				</div>
 			</form>
-			<Link to='/login' previousPath={previousPath}>
-				← Go to Login
+			<Link to='/login'>
+				← Sign In
 			</Link>
 		</div>
 	);

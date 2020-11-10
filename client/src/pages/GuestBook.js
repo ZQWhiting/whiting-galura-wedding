@@ -9,18 +9,18 @@ function GuestBook() {
 		<div className='guest-book'>
 			{!Auth.loggedIn() && (
 				<h2>
-					<Link to='/login' previousPath='/guestbook'>
-						Login
+					<Link to='/login' previouspath='/guestbook'>
+						Sign In
 					</Link>{' '}
 					or{' '}
-					<Link to='/signup' previousPath='/guestbook'>
-						Signup
+					<Link to='/signup' previouspath='/guestbook'>
+						Sign Up
 					</Link>{' '}
 					to:
 				</h2>
 			)}
 			<div>
-				<h4>Send a message to the couple</h4>
+				<h4>Sign the Guest Book</h4>
 				{Auth.loggedIn() && (
 					<form>
 						<div className='my-2 form-group mb-2 row'>
@@ -32,7 +32,10 @@ function GuestBook() {
 								placeholder='Your Message'
 							/>
 						</div>
-						<button type='submit' className='btn button mb-2 submit-btn'>
+						<button
+							type='submit'
+							className='btn button mb-2 submit-btn'
+						>
 							Submit
 						</button>
 					</form>
@@ -78,7 +81,10 @@ function GuestBook() {
 								placeholder='Website'
 							></input>
 						</div>
-						<button type='submit' className='btn button mb-2 submit-btn'>
+						<button
+							type='submit'
+							className='btn button mb-2 submit-btn'
+						>
 							Submit
 						</button>
 					</form>
