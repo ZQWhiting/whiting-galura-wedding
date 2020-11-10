@@ -15,7 +15,7 @@ function GuestBook() {
 		phoneNumber: '',
 		website: '',
 	});
-	const [validationError, setValidationError] = useState('')
+	const [validationError, setValidationError] = useState('');
 
 	const [signGuestBook] = useMutation(SIGN_GUEST_BOOK, {
 		variables: { signature: guestContent },
@@ -31,10 +31,24 @@ function GuestBook() {
 
 		setGuestContent('');
 	}
-	const validateEmail = () =>
-		!contactContent.email
+	const validateEmail = () => {
+		console.log(contactContent.email);
+
+		return !contactContent.email
 			? true
-			: contactContent.email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
+			: contactContent.email.match(
+					/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+			  )
+			? true
+			: false;
+	};
+
+	const validateWebsite = () =>
+		!contactContent.website
+			? true
+			: contactContent.website.match(
+					/^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/
+			  )
 			? true
 			: false;
 
@@ -50,10 +64,11 @@ function GuestBook() {
 
 		const email = validateEmail();
 		const phoneNumber = validatePhoneNumber();
+		const website = validateWebsite();
 
-		if (email && phoneNumber) {
+		if (email && phoneNumber && website) {
 			try {
-				console.log()
+				console.log();
 				addContacts();
 				setContactContent({
 					email: '',
@@ -61,16 +76,22 @@ function GuestBook() {
 					phoneNumber: '',
 					website: '',
 				});
-				setValidationError('')
+				setValidationError('');
 			} catch (e) {
 				console.log(e);
 			}
-		} else if (!email && !phoneNumber) {
-			setValidationError('Email and Phone Number validation failed.');
+		} else if (!email && !phoneNumber && !website) {
+			setValidationError(
+				'Email, website, and Phone Number validation failed.'
+			);
 		} else if (!phoneNumber) {
-			setValidationError('Phone Number validation failed. Please use format: ###-###-####')
+			setValidationError(
+				'Phone Number validation failed. Please use format: ###-###-####'
+			);
+		} else if (!email) {
+			setValidationError('Email validation failed.');
 		} else {
-			setValidationError('Email validation failed.')
+			setValidationError('Website validation failed.');
 		}
 	}
 	return (
@@ -189,7 +210,7 @@ function GuestBook() {
 						>
 							Submit
 						</button>
-						{validationError && (<div>{validationError}</div>)}
+						{validationError && <div>{validationError}</div>}
 					</form>
 				)}
 			</div>
