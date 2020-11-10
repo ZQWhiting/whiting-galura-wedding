@@ -1,10 +1,25 @@
 // send a message to the couple
 // attach your contact
 
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 function GuestBook() {
+	const [guestContent, setGuestContent] = useState('');
+	const [contactContent, setContactContent] = useState({
+		email: '',
+		address: '',
+		phoneNumber: '',
+		website: '',
+	});
+
+	function submitGuestBook(e) {
+		e.preventDefault();
+	}
+	function submitContact(e) {
+		e.preventDefault();
+	}
 	return (
 		<div className='guest-book'>
 			{!Auth.loggedIn() && (
@@ -30,11 +45,16 @@ function GuestBook() {
 								className='form-control col mx-3 no-resize'
 								rows='8'
 								placeholder='Your Message'
+								value={guestContent}
+								onChange={(e) =>
+									setGuestContent(e.target.value)
+								}
 							/>
 						</div>
 						<button
 							type='submit'
 							className='btn button mb-2 submit-btn'
+							onClick={submitGuestBook}
 						>
 							Submit
 						</button>
@@ -52,7 +72,14 @@ function GuestBook() {
 								name='email'
 								className='form-control col mx-3'
 								placeholder='Email'
-							></input>
+								value={contactContent.email}
+								onChange={(e) =>
+									setContactContent({
+										...contactContent,
+										email: e.target.value,
+									})
+								}
+							/>
 						</div>
 						<div className='my-2 form-group mb-2 row'>
 							<input
@@ -61,7 +88,14 @@ function GuestBook() {
 								name='address'
 								className='form-control col mx-3'
 								placeholder='Address'
-							></input>
+								value={contactContent.address}
+								onChange={(e) =>
+									setContactContent({
+										...contactContent,
+										address: e.target.value,
+									})
+								}
+							/>
 						</div>
 						<div className='my-2 form-group mb-2 row'>
 							<input
@@ -70,7 +104,14 @@ function GuestBook() {
 								name='phone-number'
 								className='form-control col mx-3'
 								placeholder='Phone Number'
-							></input>
+								value={contactContent.phoneNumber}
+								onChange={(e) =>
+									setContactContent({
+										...contactContent,
+										phoneNumber: e.target.value,
+									})
+								}
+							/>
 						</div>
 						<div className='my-2 form-group mb-2 row'>
 							<input
@@ -79,11 +120,19 @@ function GuestBook() {
 								name='website'
 								className='form-control col mx-3'
 								placeholder='Website'
-							></input>
+								value={contactContent.website}
+								onChange={(e) =>
+									setContactContent({
+										...contactContent,
+										website: e.target.value,
+									})
+								}
+							/>
 						</div>
 						<button
 							type='submit'
 							className='btn button mb-2 submit-btn'
+							onClick={submitContact}
 						>
 							Submit
 						</button>
