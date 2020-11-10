@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import Welcome from './pages/Welcome';
+import Welcome from './pages/Welcome copy';
 import NoMatch from './pages/NoMatch';
 import Header from './components/Header';
 import Login from './pages/Login';
