@@ -1,146 +1,148 @@
 :root {
-  --color-pink: rgb(255, 196, 196)
+	--color-pink: rgb(255, 196, 196);
 }
 
 html {
-  font-size: 20px;
-  text-shadow: 1px 1px white;
+	font-size: 20px;
+	text-shadow: 1px 1px white;
 }
 
 @font-face {
-  font-family: "Jane Austen";
-  src: url(./assets/fonts/JaneAust.ttf);
+	font-family: 'Jane Austen';
+	src: url(./assets/fonts/JaneAust.ttf);
 }
 @font-face {
-  font-family: "IM Fell English";
-  src: url(./assets/fonts/IMFellEnglish-Regular.ttf)
+	font-family: 'IM Fell English';
+	src: url(./assets/fonts/IMFellEnglish-Regular.ttf);
 }
 @font-face {
-  font-family: "IM Fell English I";
-  src: url(./assets/fonts/IMFellEnglish-Italic.ttf)
+	font-family: 'IM Fell English I';
+	src: url(./assets/fonts/IMFellEnglish-Italic.ttf);
 }
 
 .font-ja {
-  font-family: Jane Austen;
-  font-weight: normal;
-  font-style: normal;
+	font-family: Jane Austen;
+	font-weight: normal;
+	font-style: normal;
 }
 .font-eng {
-  font-family: IM Fell English;
-  font-weight: normal;
-  font-style: normal;
+	font-family: IM Fell English;
+	font-weight: normal;
+	font-style: normal;
 }
 .font-eng-i {
-  font-family: IM Fell English I;
-  font-weight: normal;
-  font-style: normal;
+	font-family: IM Fell English I;
+	font-weight: normal;
+	font-style: normal;
 }
 
 body {
-  margin: 0;
-  font-family: IM Fell English !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: IM Fell English !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-  background-image: url(./assets/images/willow-background.png);
+	background-image: url(./assets/images/willow-background.png);
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 30%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 30%;
 
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 a {
-  text-decoration: none !important;
-  color: black !important;
+	text-decoration: none !important;
+	color: black !important;
 }
 
 a:hover {
-  color: var(--color-pink) !important;
-  text-shadow: 0px 0px 3px rgb(116, 104, 0);
+	color: var(--color-pink) !important;
+	text-shadow: 0px 0px 3px rgb(116, 104, 0);
 }
 
 .name-padding {
-  padding-bottom: 5vh;
+	padding-bottom: 5vh;
 }
 
 .align-center {
-  align-items: center;
-  text-align: center;
+	align-items: center;
+	text-align: center;
 }
 
+.welcome-image {
+	align-items: flex-start;
+}
 
 .welcome-image img {
-  width: 30vw;
-  padding: 10px;
-  border-radius: 46% 46% 0% 0%
-
+	width: 30vw;
+	padding: 10px;
+	border-radius: 46% 46% 0% 0%;
 }
 
 .container {
-  background-color: rgba(255,255,255,0.3);
-  padding: 20vh 0 3em;
-  text-align: center;
-  min-height: 100vh;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 20vh 0 3em;
+	text-align: center;
+	min-height: 100vh;
 }
 
 .text-footer {
-  margin-top: 20vh
+	margin-top: 20vh;
 }
 
 .no-resize {
-  resize: none;
+	resize: none;
 }
 
 .guest-book {
-  width: 70%;
-  margin: 0 auto;
+	width: 70%;
+	margin: 0 auto;
 }
 
 .button {
-  background: var(--color-pink) !important;
+	background: var(--color-pink) !important;
 }
 
 .top-right-menu {
-  position: absolute;
-  top: 5vh;
-  right: 15vw;
+	position: absolute;
+	top: 5vh;
+	right: 15vw;
 }
 
 .top-right-menu a {
-  padding: 0 10px;
+	padding: 0 10px;
 }
 
 .dropdown-nav {
-  position: relative;
-  bottom: 100px;
-  background-color: rgba(255,255,255,0.7);
-  display: flex;
-  padding: 10px;
+	position: relative;
+	bottom: 100px;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	padding: 10px;
 }
 
 .article {
-  background-color: rgba(255,255,255,0.7);
-  padding: 30px;
-  padding-left: 40px;
-  text-align: left;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 30px;
+	padding-left: 40px;
+	text-align: left;
 }
 
 #nav-toggle {
-  z-index: 10;
+	z-index: 10;
 }
 
 @media only screen and (max-width: 600px) {
-  html {
-    font-size: 17px;
-  }
-  .welcome-image img {
-    width: 75vw;
-    border-radius: 0;
-  }
-  .guest-book {
-    width: 100%;
-  }
+	html {
+		font-size: 17px;
+	}
+	.welcome-image img {
+		width: 75vw;
+		border-radius: 0;
+	}
+	.guest-book {
+		width: 100%;
+	}
 }
