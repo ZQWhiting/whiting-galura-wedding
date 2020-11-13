@@ -14,6 +14,7 @@ import Registry from './pages/registry';
 import YourStories from './pages/yourstories';
 import Ceremony from './pages/ceremony';
 import CreateStory from './pages/createstory';
+import Contact from './pages/contact';
 
 const client = new ApolloClient({
 	request: (operation) => {
@@ -46,6 +47,7 @@ function App() {
 						/>
 						<Route exact path='/guestbook' component={GuestBook} />
 						<Route exact path='/ceremony' component={Ceremony} />
+						<Route exact path='/contact' component={Contact} />
 						<Route
 							exact
 							path='/yourstories/createstory'

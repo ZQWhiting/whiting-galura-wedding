@@ -62,6 +62,12 @@ a:hover {
 	text-shadow: 0px 0px 3px rgb(116, 104, 0);
 }
 
+.line-break {
+  padding-bottom: 40px;
+  margin: 0 10vw 40px;
+  border-bottom: 1px solid black;
+}
+
 .name-padding {
 	padding-bottom: 5vh;
 }
@@ -144,5 +150,9 @@ a:hover {
 	}
 	.guest-book {
 		width: 100%;
-	}
+  }
+  .line-break {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
 }

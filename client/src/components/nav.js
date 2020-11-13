@@ -68,6 +68,9 @@ function Nav({ showDropdown, setShowDropdown }) {
 				<Link to='/registry' className='col p-3' onClick={dropdown}>
 					Registry
 				</Link>
+				<Link to='/contact' className='col p-3' onClick={dropdown}>
+					Contact
+				</Link>
 			</>
 		</nav>
 	);
