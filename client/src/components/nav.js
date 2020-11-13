@@ -69,7 +69,7 @@ function Nav({ showDropdown, setShowDropdown }) {
 					Registry
 				</Link>
 				<Link to='/contact' className='col p-3' onClick={dropdown}>
-					Contact
+					Contact Us
 				</Link>
 			</>
 		</nav>
