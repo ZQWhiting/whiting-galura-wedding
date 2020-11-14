@@ -44,3 +44,25 @@ export const SIGN_GUEST_BOOK = gql`
 		}
 	}
 `;
+
+export const ADD_RELATIONSHIP = gql`
+	mutation addRelationship($relationship: String!) {
+		addRelationship(relationship: $relationship) {
+			name
+			detail {
+				relationship
+			}
+		}
+	}
+`;
+
+export const ADD_PHOTO = gql`
+	mutation addPhoto($photo: String!) {
+		addPhoto(photo: $photo) {
+			name
+			detail {
+				photo
+			}
+		}
+	}
+`;

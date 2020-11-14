@@ -39,11 +39,33 @@ const resolvers = {
 			return { token, user };
 		},
 		addContact: async (parent, { contact }, { user }) => {
-			console.log(contact);;
+			console.log(contact);
 			const currentUser = await User.findOneAndUpdate(
 				user,
 				{ contact: contact },
 				{ new: true, runValidators: true }
+			);
+
+			return currentUser;
+		},
+		addPhoto: async (parent, { photo }, { user }) => {
+			const currentUser = await User.findOneAndUpdate(
+				user,
+				{
+					$set: { 'detail.photo': photo },
+				},
+				{ new: true }
+			);
+
+			return currentUser;
+		},
+		addRelationship: async (parent, { relationship }, { user }) => {
+			const currentUser = await User.findOneAndUpdate(
+				user,
+				{
+					$set: { 'detail.relationship': relationship },
+				},
+				{ new: true }
 			);
 
 			return currentUser;

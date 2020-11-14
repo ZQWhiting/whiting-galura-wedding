@@ -15,8 +15,6 @@ function Contact() {
 				Zachary's Email: zach.whiting@icloud.com
 			</p>
 
-			{/* Ashley's and Zachary's new address (after Dec 5th): */}
-
 			<p>Venmo donations can be sent to either Ashley or Zachary.</p>
 		</div>
 	);

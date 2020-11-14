@@ -71,7 +71,7 @@ const userSchema = new Schema({
 		type: String,
 	},
 	contact: contactSchema,
-	details: detailSchema,
+	detail: detailSchema,
 	activities: activitiesSchema,
 });
 

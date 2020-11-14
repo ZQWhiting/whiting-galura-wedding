@@ -43,6 +43,8 @@ const typeDefs = gql`
 		signup(name: String!, password: String!): Auth
 		login(name: String!, password: String!): Auth
 		addContact(contact: ContactInput): User
+		addPhoto(photo: String!): User
+		addRelationship(relationship: String!): User
 		signGuestBook(signature: String!): User
 	}
 `;
