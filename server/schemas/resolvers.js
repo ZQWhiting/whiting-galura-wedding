@@ -13,6 +13,11 @@ const resolvers = {
 
 			return users;
 		},
+		stories: async () => {
+			const stories = await Story.find();
+
+			return stories;
+		},
 	},
 	Mutation: {
 		signup: async (parent, args) => {
