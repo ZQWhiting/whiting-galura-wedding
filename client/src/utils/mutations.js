@@ -66,3 +66,14 @@ export const ADD_PHOTO = gql`
 		}
 	}
 `;
+
+export const CREATE_STORY = gql`
+	mutation createStory($title: String!, $body: String!) {
+		createStory(title: $title, body: $body) {
+			title
+			body
+			username
+			relationship
+		}
+	}
+`;

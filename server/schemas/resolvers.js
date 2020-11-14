@@ -2,7 +2,7 @@ const {
 	AuthenticationError,
 	ValidationError,
 } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Story } = require('../models');
 const { signToken } = require('../utils/auth');
 // replace with environment variable
 
@@ -80,6 +80,30 @@ const resolvers = {
 			);
 
 			return currentUser;
+		},
+		createStory: async (parent, { title, body }, { user }) => {
+			const currentUser = await User.findOne(user);
+
+			const {
+				name,
+				detail: { relationship },
+			} = currentUser;
+
+			const story = await Story.create({
+				title,
+				body,
+				username: name,
+				relationship,
+			});
+
+			currentUser.stories.push(story);
+
+			currentUser.save(
+				{ validateBeforeSave: true },
+				(err) => err && console.log(err)
+			);
+
+			return story;
 		},
 	},
 };

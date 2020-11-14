@@ -7,6 +7,13 @@ const typeDefs = gql`
 		phoneNumber: String
 		website: String
 	}
+	type Story {
+		_id: ID
+		title: String!
+		body: String!
+		username: String!
+		relationship: String
+	}
 	type Contact {
 		email: String
 		address: String
@@ -31,6 +38,7 @@ const typeDefs = gql`
 		detail: Detail
 		activities: Activities
 		guestBook: String
+		stories: [Story]
 	}
 	type Auth {
 		token: ID
@@ -46,6 +54,7 @@ const typeDefs = gql`
 		addPhoto(photo: String!): User
 		addRelationship(relationship: String!): User
 		signGuestBook(signature: String!): User
+		createStory(title: String!, body: String!): Story
 	}
 `;
 
