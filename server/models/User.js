@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
+const { storySchema } = require('./Story');
+
 const contactSchema = new Schema({
 	email: {
 		type: String,
@@ -55,26 +57,6 @@ const activitiesSchema = new Schema({
 	},
 });
 
-const storySchema = new Schema({
-	title: {
-		type: String,
-		required: true,
-		trim: true,
-	},
-	body: {
-		type: String,
-		required: true,
-		maxlength: 100000,
-	},
-	username: {
-		type: String,
-		required: true
-	},
-	relationship: {
-		type: String,
-	}
-});
-
 const userSchema = new Schema({
 	name: {
 		type: String,
@@ -111,8 +93,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return await bcrypt.compare(password, this.password);
 };
 
-
 const User = mongoose.model('User', userSchema);
-const Story = mongoose.model('Story', storySchema);
 
-module.exports = {User, Story};
+module.exports = User;

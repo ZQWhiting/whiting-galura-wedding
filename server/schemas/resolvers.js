@@ -1,7 +1,4 @@
-const {
-	AuthenticationError,
-	ValidationError,
-} = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { User, Story } = require('../models');
 const { signToken } = require('../utils/auth');
 // replace with environment variable
