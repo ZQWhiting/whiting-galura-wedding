@@ -44,71 +44,86 @@ const resolvers = {
 			return { token, user };
 		},
 		addContact: async (parent, { contact }, { user }) => {
-			console.log(contact);
-			const currentUser = await User.findOneAndUpdate(
-				user,
-				{ contact: contact },
-				{ new: true, runValidators: true }
-			);
+			if (user) {
+				const currentUser = await User.findOneAndUpdate(
+					user,
+					{ contact: contact },
+					{ new: true, runValidators: true }
+				);
 
-			return currentUser;
+				return currentUser;
+			}
+			throw new AuthenticationError('Not Signed In');
 		},
 		addPhoto: async (parent, { photo }, { user }) => {
-			const currentUser = await User.findOneAndUpdate(
-				user,
-				{
-					$set: { 'detail.photo': photo },
-				},
-				{ new: true }
-			);
+			if (user) {
+				const currentUser = await User.findOneAndUpdate(
+					user,
+					{
+						$set: { 'detail.photo': photo },
+					},
+					{ new: true }
+				);
 
-			return currentUser;
+				return currentUser;
+			}
+			throw new AuthenticationError('Not Signed In');
 		},
 		addRelationship: async (parent, { relationship }, { user }) => {
-			const currentUser = await User.findOneAndUpdate(
-				user,
-				{
-					$set: { 'detail.relationship': relationship },
-				},
-				{ new: true }
-			);
+			if (user) {
+				const currentUser = await User.findOneAndUpdate(
+					user,
+					{
+						$set: { 'detail.relationship': relationship },
+					},
+					{ new: true }
+				);
 
-			return currentUser;
+				return currentUser;
+			}
+
+			throw new AuthenticationError('Not Signed In');
 		},
 		signGuestBook: async (parent, { signature }, { user }) => {
-			const currentUser = await User.findOneAndUpdate(
-				user,
-				{
-					guestBook: signature,
-				},
-				{ new: true }
-			);
+			if (user) {
+				const currentUser = await User.findOneAndUpdate(
+					user,
+					{
+						guestBook: signature,
+					},
+					{ new: true }
+				);
 
-			return currentUser;
+				return currentUser;
+			}
+			throw new AuthenticationError('Not Signed In');
 		},
 		createStory: async (parent, { title, body }, { user }) => {
-			const currentUser = await User.findOne(user);
+			if (user) {
+				const currentUser = await User.findOne(user);
 
-			const {
-				name,
-				detail: { relationship },
-			} = currentUser;
+				const {
+					name,
+					detail: { relationship },
+				} = currentUser;
 
-			const story = await Story.create({
-				title,
-				body,
-				username: name,
-				relationship,
-			});
+				const story = await Story.create({
+					title,
+					body,
+					username: name,
+					relationship,
+				});
 
-			currentUser.stories.push(story);
+				currentUser.stories.push(story);
 
-			currentUser.save(
-				{ validateBeforeSave: true },
-				(err) => err && console.log(err)
-			);
+				currentUser.save(
+					{ validateBeforeSave: true },
+					(err) => err && console.log(err)
+				);
 
-			return story;
+				return story;
+			}
+			throw new AuthenticationError('Not Signed In');
 		},
 	},
 };
