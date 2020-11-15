@@ -15,6 +15,7 @@ import YourStories from './pages/yourstories';
 import Ceremony from './pages/ceremony';
 import CreateStory from './pages/createstory';
 import Contact from './pages/contact';
+import Stories from './pages/stories';
 
 const client = new ApolloClient({
 	request: (operation) => {
@@ -52,6 +53,11 @@ function App() {
 							exact
 							path='/yourstories/createstory'
 							component={CreateStory}
+						/>
+						<Route
+							exact
+							path='/yourstories/stories'
+							component={Stories}
 						/>
 						<Route component={NoMatch} />
 					</Switch>

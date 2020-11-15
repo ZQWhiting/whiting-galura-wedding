@@ -1,5 +1,5 @@
 // send a message to the couple
-// attach your contact
+// attach your contact;
 
 import { useMutation } from '@apollo/react-hooks';
 import { useState } from 'react';
@@ -114,8 +114,8 @@ function GuestBook() {
 					<form>
 						<div className='my-2 form-group mb-2 row'>
 							<textarea
-								id='website'
-								name='website'
+								id='signature'
+								name='signature'
 								className='form-control col mx-3 no-resize'
 								rows='8'
 								placeholder='Your Message'
