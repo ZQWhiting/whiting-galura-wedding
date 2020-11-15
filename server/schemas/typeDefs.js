@@ -11,8 +11,9 @@ const typeDefs = gql`
 		_id: ID
 		title: String!
 		body: String!
-		username: String!
-		relationship: String
+		user: User
+		createdAt: String
+		updatedAt: String
 	}
 	type Contact {
 		email: String

@@ -6,12 +6,12 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
 	Query: {
 		users: async () => {
-			const users = await User.find();
+			const users = await User.find().populate('stories').exec();
 
 			return users;
 		},
 		stories: async () => {
-			const stories = await Story.find();
+			const stories = await Story.find().populate('user').exec();
 
 			return stories;
 		},
@@ -99,26 +99,19 @@ const resolvers = {
 			if (user) {
 				const currentUser = await User.findOne(user);
 
-				const {
-					name,
-					detail: { relationship },
-				} = currentUser;
-
 				const story = await Story.create({
 					title,
 					body,
-					username: name,
-					relationship,
+					user,
 				});
 
-				currentUser.stories.push(story);
+				currentUser.stories.push(story._id);
 
-				currentUser.save(
-					{ validateBeforeSave: true },
-					(err) => err && console.log(err)
-				);
+				console.log(currentUser.stories, story._id);
 
-				return story;
+				currentUser.save();
+
+				return story.populate('user').execPopulate();
 			}
 			throw new AuthenticationError('Not Signed In');
 		},

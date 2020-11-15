@@ -13,14 +13,10 @@ const storySchema = new Schema({
 		required: true,
 		maxlength: 100000,
 	},
-	username: {
-		type: String,
-		required: true,
-	},
-	relationship: {
-		type: String,
-	},
+	user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
+
+storySchema.set('timestamps', true);
 
 const Story = mongoose.model('Story', storySchema);
 

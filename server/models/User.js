@@ -75,7 +75,7 @@ const userSchema = new Schema({
 	contact: contactSchema,
 	detail: detailSchema,
 	activities: activitiesSchema,
-	stories: [storySchema],
+	stories: [{ type: Schema.Types.ObjectId, ref: 'Story' }],
 });
 
 // set up pre-save middleware to create password
