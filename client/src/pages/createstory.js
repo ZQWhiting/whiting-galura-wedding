@@ -54,10 +54,10 @@ function CreateStory() {
 	};
 
 	return (
-		<div>
+		<div className='w-70'>
 			<Loginsuggestion />
 			<div>
-				<h2>Share a Story</h2>
+				<h3>Share a Story</h3>
 				{loggedIn && (
 					<>
 						<form>
@@ -109,7 +109,7 @@ function CreateStory() {
 				)}
 			</div>
 			{/* <div>
-				<h2>Add Your Photo</h2>
+				<h3>Add Your Photo</h3>
 				{loggedIn && (
 					<form>
 						<div className='my-2 form-group mb-2 row'>
@@ -138,7 +138,7 @@ function CreateStory() {
 				)}
 			</div> */}
 			<div>
-				<h2>Add Relationship Tag</h2>
+				<h3>Add Relationship Tag</h3>
 				{loggedIn && (
 					<>
 						<form>
@@ -148,16 +148,17 @@ function CreateStory() {
 									type='text'
 									name='relationship'
 									className='form-control col mx-3'
-									placeholder="Tag"
+									placeholder='Tag'
 									value={relationshipContent}
 									onChange={(e) =>
 										setRelationshipContent(e.target.value)
 									}
 								/>
-								<label htmlFor='relationship' style={{padding: '0 10px'}}>
-									Father, Mother, Cousin, Ashley's Friend, Whiting Family Friend, etc.
-								</label>
 							</div>
+							<p style={{ padding: '0 10px' }}>
+								Father, Mother, Cousin, Ashley's Friend, Whiting
+								Family Friend, etc.
+							</p>
 							{error2 && (
 								<div
 									style={{

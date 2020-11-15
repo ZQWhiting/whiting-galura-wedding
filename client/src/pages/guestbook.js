@@ -3,7 +3,7 @@
 
 import { useMutation } from '@apollo/react-hooks';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Loginsuggestion from '../components/loginsuggestion';
 import Auth from '../utils/auth';
 import { SIGN_GUEST_BOOK, ADD_CONTACT } from '../utils/mutations';
 
@@ -95,21 +95,10 @@ function GuestBook() {
 		}
 	}
 	return (
-		<div className='guest-book'>
-			{!Auth.loggedIn() && (
-				<h2>
-					<Link to='/login' previouspath='/guestbook'>
-						Sign In
-					</Link>{' '}
-					or{' '}
-					<Link to='/signup' previouspath='/guestbook'>
-						Sign Up
-					</Link>{' '}
-					to:
-				</h2>
-			)}
+		<div className='w-70'>
+			<Loginsuggestion   />
 			<div>
-				<h4>Sign the Guest Book</h4>
+				<h3>Sign the Guest Book</h3>
 				{Auth.loggedIn() && (
 					<form>
 						<div className='my-2 form-group mb-2 row'>
@@ -136,7 +125,7 @@ function GuestBook() {
 				)}
 			</div>
 			<div>
-				<h4>Attach your contacts</h4>
+				<h3>Attach your contacts</h3>
 				{Auth.loggedIn() && (
 					<form>
 						<div className='my-2 form-group mb-2 row'>

@@ -5,7 +5,7 @@ const Loginsuggestion = () => {
 	return (
 		<>
 			{!Auth.loggedIn() && (
-				<h3>
+				<h2>
 					<Link to='/login' previouspath='/guestbook'>
 						Sign In
 					</Link>{' '}
@@ -14,7 +14,7 @@ const Loginsuggestion = () => {
 						Sign Up
 					</Link>{' '}
 					to:
-				</h3>
+				</h2>
 			)}
 		</>
 	);

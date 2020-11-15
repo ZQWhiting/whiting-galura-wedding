@@ -102,7 +102,7 @@ a:hover {
 	resize: none;
 }
 
-.guest-book {
+.w-70 {
 	width: 70%;
 	margin: 0 auto;
 }
@@ -140,7 +140,7 @@ a:hover {
 	z-index: 10;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	html {
 		font-size: 17px;
 	}
@@ -148,7 +148,7 @@ a:hover {
 		width: 75vw;
 		border-radius: 0;
 	}
-	.guest-book {
+	.w-70 {
 		width: 100%;
   }
   .line-break {
