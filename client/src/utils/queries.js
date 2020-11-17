@@ -32,8 +32,8 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_STORIES = gql`
-	{
-		stories {
+	query stories($_id: ID) {
+		stories(_id: $_id) {
 			_id
 			title
 			body

@@ -47,7 +47,7 @@ const typeDefs = gql`
 	}
 	type Query {
 		users: [User]
-		stories: [Story]
+		stories(_id: ID): [Story]
 	}
 	type Mutation {
 		signup(name: String!, password: String!): Auth

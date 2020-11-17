@@ -10,8 +10,8 @@ const resolvers = {
 
 			return users;
 		},
-		stories: async () => {
-			const stories = await Story.find().populate('user').exec();
+		stories: async (parent, args) => {
+			const stories = await Story.find(args).populate('user').exec();
 
 			return stories;
 		},
