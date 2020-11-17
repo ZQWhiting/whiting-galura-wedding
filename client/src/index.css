@@ -63,9 +63,9 @@ a:hover {
 }
 
 .line-break {
-  padding-bottom: 40px;
-  margin: 0 10vw 40px;
-  border-bottom: 1px solid black;
+	padding-bottom: 40px;
+	margin: 0 10vw 40px;
+	border-bottom: 1px solid black;
 }
 
 .name-padding {
@@ -136,6 +136,39 @@ a:hover {
 	text-align: left;
 }
 
+.story-list {
+	background-color: rgb(253, 239, 222);
+	border: 10px solid rgb(255, 225, 185);
+	display: flex;
+	flex-wrap: wrap;
+	margin: 30px auto;
+	box-shadow: 0px 0px 5px 11px burlywood;
+}
+
+.story-card {
+	display: flex;
+	flex: 1 100%;
+	flex-wrap: wrap;
+	border-bottom: 3px solid rgb(255, 225, 185);
+	padding: 0.5em;
+}
+
+.story-card:last-child {
+	border: none;
+}
+
+.story-card-title {
+	flex: 1 100%;
+}
+
+.story-card-author {
+	flex: 1 100%;
+}
+
+.story-card-relationship {
+	flex: 1 100%;
+}
+
 #nav-toggle {
 	z-index: 10;
 }
@@ -150,9 +183,9 @@ a:hover {
 	}
 	.w-70 {
 		width: 100%;
-  }
-  .line-break {
-    margin-left: 2vw;
-    margin-right: 2vw;
-  }
+	}
+	.line-break {
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
 }
