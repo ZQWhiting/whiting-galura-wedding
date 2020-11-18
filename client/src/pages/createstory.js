@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Loginsuggestion from '../components/loginsuggestion';
 import Auth from '../utils/auth';
 import { ADD_RELATIONSHIP, CREATE_STORY } from '../utils/mutations';
@@ -141,7 +142,7 @@ function CreateStory() {
 				<h3>Add Relationship Tag</h3>
 				{loggedIn && (
 					<>
-						<form>
+						<form >
 							<div className='my-2 form-group mb-2 row'>
 								<input
 									id='relationship'
@@ -180,6 +181,11 @@ function CreateStory() {
 					</>
 				)}
 			</div>
+			<h4>
+				<Link to='yourstories/stories' className='font-eng-i'>
+					Read Stories
+				</Link>
+			</h4>
 		</div>
 	);
 }
