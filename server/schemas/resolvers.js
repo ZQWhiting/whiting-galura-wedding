@@ -1,7 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Story } = require('../models');
 const { signToken } = require('../utils/auth');
-// replace with environment variable
+const find = require('list-files');
+const path = require('path');
+const fs = require('fs');
 
 const resolvers = {
 	Query: {
@@ -14,6 +16,63 @@ const resolvers = {
 			const stories = await Story.find(args).populate('user').exec();
 
 			return stories;
+		},
+		photos: async () => {
+			const photos = {
+				ashley: [],
+				zachary: [],
+				couple: [],
+			};
+
+			const addDir = (files, pathType) => {
+				return files.map((file) => {
+					let path = '';
+					switch (pathType) {
+						case 'ashley':
+							path = 'AshleySlide';
+							break;
+						case 'zachary':
+							path = 'ZacharySlide';
+							break;
+						case 'couple':
+							path = 'CoupleSlide';
+							break;
+						default:
+							break;
+					}
+					return `/images/${path}/${file}`;
+				});
+			};
+
+			const getFiles = (path) => {
+				return fs.readdirSync(path, function (err, files) {
+					if (err) {
+						return console.log('Unable to scan directory: ' + err);
+					}
+					return files;
+				});
+			};
+
+			const getDirectory = (directory) => {
+				return path.join(
+					__dirname,
+					`../../client/public/images/${directory}`
+				);
+			};
+
+			const directoryPathAshley = getDirectory('AshleySlide');
+			const directoryPathZachary = getDirectory('ZacharySlide');
+			const directoryPathCouple = getDirectory('CoupleSlide');
+
+			const AshleyFiles = getFiles(directoryPathAshley);
+			const ZacharyFiles = getFiles(directoryPathZachary);
+			const CoupleFiles = getFiles(directoryPathCouple);
+
+			photos.ashley = addDir(AshleyFiles, 'ashley');
+			photos.zachary = addDir(ZacharyFiles, 'zachary');
+			photos.couple = addDir(CoupleFiles, 'couple');
+
+			return photos;
 		},
 	},
 	Mutation: {

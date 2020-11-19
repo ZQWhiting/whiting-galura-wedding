@@ -7,6 +7,11 @@ const typeDefs = gql`
 		phoneNumber: String
 		website: String
 	}
+	type Photos {
+		zachary: [String]
+		ashley: [String]
+		couple: [String]
+	}
 	type Story {
 		_id: ID
 		title: String!
@@ -48,6 +53,7 @@ const typeDefs = gql`
 	type Query {
 		users: [User]
 		stories(_id: ID): [Story]
+		photos: Photos
 	}
 	type Mutation {
 		signup(name: String!, password: String!): Auth
