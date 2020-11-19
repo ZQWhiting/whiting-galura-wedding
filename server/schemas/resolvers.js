@@ -62,15 +62,15 @@ const resolvers = {
 
 			const directoryPathAshley = getDirectory('AshleySlide');
 			const directoryPathZachary = getDirectory('ZacharySlide');
-			// const directoryPathCouple = getDirectory('CoupleSlide');
+			const directoryPathCouple = getDirectory('CoupleSlide');
 
 			const AshleyFiles = getFiles(directoryPathAshley);
 			const ZacharyFiles = getFiles(directoryPathZachary);
-			// const CoupleFiles = getFiles(directoryPathCouple);
+			const CoupleFiles = getFiles(directoryPathCouple);
 
 			photos.ashley = addDir(AshleyFiles, 'ashley');
 			photos.zachary = addDir(ZacharyFiles, 'zachary');
-			// photos.couple = addDir(CoupleFiles, 'couple');
+			photos.couple = addDir(CoupleFiles, 'couple');
 
 			return photos;
 		},

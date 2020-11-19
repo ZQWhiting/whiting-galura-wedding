@@ -50,7 +50,7 @@ function Photos() {
 					</Slide>
 				</div>
 			</div>
-			{/* <h2>Couple</h2>
+			<h2>Couple</h2>
 			<div>
 				<div className='slide-container w-70'>
 					<Slide>
@@ -67,7 +67,7 @@ function Photos() {
 						))}
 					</Slide>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 }

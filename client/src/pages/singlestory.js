@@ -16,8 +16,6 @@ function SingleStory() {
 	}
 
 	const story = data?.stories[0];
-	console.log(story.body.split(/\r?\n/).filter((paragraph) => paragraph));
-	console.log(story.body);
 
 	return (
 		<>
