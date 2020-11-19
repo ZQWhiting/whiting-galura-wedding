@@ -50,3 +50,13 @@ export const QUERY_STORIES = gql`
 		}
 	}
 `;
+
+export const QUERY_PHOTOS = gql`
+	{
+		photos {
+			zachary
+			ashley
+			couple
+		}
+	}
+`;

@@ -17,6 +17,7 @@ import CreateStory from './pages/createstory';
 import Contact from './pages/contact';
 import Stories from './pages/stories';
 import SingleStory from './pages/singlestory';
+import Photos from './pages/photos';
 
 const client = new ApolloClient({
 	request: (operation) => {
@@ -50,6 +51,7 @@ function App() {
 						<Route exact path='/guestbook' component={GuestBook} />
 						<Route exact path='/ceremony' component={Ceremony} />
 						<Route exact path='/contact' component={Contact} />
+						<Route exact path='/photos' component={Photos} />
 						<Route
 							exact
 							path='/yourstories/createstory'

@@ -56,6 +56,9 @@ function Nav({ showDropdown, setShowDropdown }) {
 				<Link to='/ourstory' className='col p-3' onClick={dropdown}>
 					Our Story
 				</Link>
+				<Link to='/photos' className='col p-3' onClick={dropdown}>
+					Photos
+				</Link>
 				<Link to='/yourstories' className='col p-3' onClick={dropdown}>
 					Your Stories
 				</Link>

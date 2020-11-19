@@ -1,6 +1,6 @@
 :root {
 	--color-pink: rgb(255, 196, 196);
-	--light-border:  rgb(255, 244, 185);
+	--light-border: rgb(255, 244, 185);
 	--light-back: rgb(253, 250, 222);
 }
 
@@ -94,6 +94,14 @@ a:hover {
 	padding: 20vh 0 3em;
 	text-align: center;
 	min-height: 100vh;
+}
+
+.slide-photo-container {
+	width: 100%;
+}
+
+.slide-photo {
+	width: 100%;
 }
 
 .container-no-height {
@@ -200,5 +208,11 @@ a:hover {
 	.line-break {
 		margin-left: 2vw;
 		margin-right: 2vw;
+	}
+}
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+	.slide-container {
+		max-height: 90vh;
+		width: 90%;
 	}
 }
