@@ -13,8 +13,8 @@ function Login() {
 		try {
 			const mutationResponse = await login({
 				variables: {
-					name: formState.name,
-					password: formState.password,
+					name: formState.name.trim(),
+					password: formState.password.trim(),
 				},
 			});
 			const token = mutationResponse.data.login.token;

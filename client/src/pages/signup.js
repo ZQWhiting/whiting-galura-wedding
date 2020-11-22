@@ -13,8 +13,8 @@ function Signup() {
 		try {
 			const mutationResponse = await signup({
 				variables: {
-					name: formState.name,
-					password: formState.password,
+					name: formState.name.trim(),
+					password: formState.password.trim(),
 				},
 			});
 			const token = mutationResponse.data.signup.token;

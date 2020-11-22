@@ -30,9 +30,11 @@ function SingleStory() {
 						))}
 				</div>
 				<h3 className='align-center font-eng-i'>~{story.user.name}</h3>
-				<h3 className='align-center font-eng-i line-break'>
-					{story.user.detail.relationship}
-				</h3>
+				{story.user.detail?.relationship && (
+					<h3 className='align-center font-eng-i line-break'>
+						{story.user.detail?.relationship}
+					</h3>
+				)}
 			</article>
 			<div>
 				<h4>
