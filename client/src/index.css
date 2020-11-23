@@ -190,6 +190,11 @@ a:hover {
 	flex: 1 100%;
 }
 
+.ceremony-container iframe {
+	width: 560px;
+	height: 315px;
+}
+
 #nav-toggle {
 	z-index: 10;
 }
@@ -208,6 +213,10 @@ a:hover {
 	.line-break {
 		margin-left: 2vw;
 		margin-right: 2vw;
+	}
+	.ceremony-container iframe {
+		width: 280px;
+		height: 157.5px;
 	}
 }
 @media only screen and (max-width: 768px) and (orientation: landscape) {

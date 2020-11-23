@@ -15,9 +15,15 @@ function Ceremony() {
 					The ceremony will be recorded and uploaded onto this page at
 					a later time.
 				</h5>
-				<p className='mb-3'>
-					The link to the broadcast will be posted here.
-				</p>
+				<div className='ceremony-container'>
+					<iframe
+						src='https://www.youtube.com/embed/Ohzmdr9MRuA'
+						frameBorder='0'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+						allowFullScreen
+						title='Whiting-Galura-Wedding'
+					></iframe>
+				</div>
 			</div>
 			<article className='article font-eng-i'>
 				<h2 className='align-center font-eng name-padding'>
