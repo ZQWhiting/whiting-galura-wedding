@@ -10,10 +10,7 @@ function Ceremony() {
 				</h4>
 				<h5 className='mb-3'>
 					Following the sealing, a ring ceremony will be broadcasted
-					at 6:15 pm.
-					<br />
-					The ceremony will be recorded and uploaded onto this page at
-					a later time.
+					and recorded below at 6:15 pm.
 				</h5>
 				<div className='ceremony-container'>
 					<iframe
